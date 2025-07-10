@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Jogos Steam | Os melhores jogos da plataforma</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="navbar">
+      <img src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg" alt="Steam Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#destaques">Destaques</a></li>
+          <li><a href="#promocoes">Promoções</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section id="destaques">
+      <h2>Destaques</h2>
+      <div class="game-grid">
+
+        <div class="game-card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg" alt="Elden Ring">
+          <div class="card-content">
+            <h3>Elden Ring</h3>
+            <p>Morrer faz parte da experiência. E você vai morrer e Muito.</p>
+            <span>R$ 249,90</span>
+            <p style="font-family: Arial, sans-serif; font-size: 12px; color: #ff8080;">Caro demais, por favor FromSoftware, dá um desconto! A carteira chora!</p>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg" alt="Counter-Strike 2">
+          <div class="card-content">
+            <h3>Counter-Strike 2</h3>
+            <p>O jogo onde todo mundo vira coach profissional após morrer na primeira rodada.</p>
+            <span>Gratuito (mas seu teclado não vai sobreviver)</span>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/582660/header.jpg" alt="Black Desert">
+          <div class="card-content">
+            <h3>Black Desert</h3>
+            <p>MMORPG com gráficos tão lindos que você esquece de jogar e só tira print.</p>
+            <span>R$ 39,99</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="promocoes">
+      <h2>Promoções da Semana</h2>
+      <div class="promo-banner">
+        <p>Até 70% OFF em jogos que você vai comprar e nunca jogar!</p>
+        <button class="promo-button">Ver Ofertas</button>
+      </div>
+    </section>
+
+    <section id="avaliacoes">
+      <h2>Avaliações</h2>
+      <div class="review">
+        <h3>"Elden Ring: Sofri, chorei, desinstalei... reinstalei.... ZEREI. 10/10"</h3>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>- Beutrano</p>
+      </div>
+
+      <div class="review">
+        <h3>"Counter-Strike 2: Entrei pra relaxar, saí querendo chutar os Argentinos."</h3>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>- Sicrano</p>
+      </div>
+
+      <div class="review">
+        <h3>"Black Desert: O único jogo onde você grinda mais do que luta. E ama isso, so que não."</h3>
+        <p>⭐⭐⭐⭐</p>
+        <p>- Fulano</p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Receba Novidades</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="game-interest">Jogos de interesse:</label>
+          <select id="game-interest" name="game-interest">
+            <option value="blackdesert">MMORPG</option>
+            <option value="fps">FPS</option>
+            <option value="estrategia">Estratégia</option>
+            <option value="todos">Todos os tipos</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Top Jogos Steam. Não afiliado à Valve ou Steam.</p>
+    <div class="social-links">
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+</body>
+</html>
