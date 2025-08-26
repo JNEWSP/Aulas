@@ -1,15 +1,191 @@
-Na atividade prática deste módulo, você irá praticar todos os conceitos aprendidos. Se tiver dúvidas, retome o passo a passo nas aulas.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação Numérica</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="number"]:focus {
+            border-color: #4a86e8;
+            outline: none;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        
+        .instructions {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Validação Numérica</h1>
+        
+        <form id="numberForm">
+            <div class="form-group">
+                <label for="numberA">Campo A:</label>
+                <input type="number" id="numberA" placeholder="Digite o número A" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="numberB">Campo B:</label>
+                <input type="number" id="numberB" placeholder="Digite o número B" required>
+            </div>
+            
+            <button type="submit">Validar</button>
+        </form>
+        
+        <div id="message" class="message"></div>
+        
+        <div class="instructions">
+            <h3>Instruções:</h3>
+            <ul>
+                <li>Digite um número no Campo A</li>
+                <li>Digite um número no Campo B</li>
+                <li>Clique no botão "Validar"</li>
+                <li>O formulário será válido se o número B for maior que o número A</li>
+            </ul>
+        </div>
+    </div>
 
-1) Crie um formulário HTML que possua dois campos numéricos:
-campo A
-campo B
-
-2) Insira um botão para submeter o formulário.
-
-3) Crie uma validação no JavaScript, na qual o formulário será válido caso o número B seja maior que o número A.
-
-4) Exiba uma mensagem positiva para o usuário quando o formulário for válido e uma mensagem negativa quando for inválido.
-
-5) Suba no Github no repositório do curso em uma branch chamada exercicio_html_js.
-
-6) Copie o link do repositório na plataforma da EBAC que a equipe de tutoria dará o feedback.
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const numberA = parseFloat(document.getElementById('numberA').value);
+            const numberB = parseFloat(document.getElementById('numberB').value);
+            const messageElement = document.getElementById('message');
+            
+            // Validação se os campos estão preenchidos
+            if (isNaN(numberA) || isNaN(numberB)) {
+                messageElement.textContent = 'Por favor, preencha ambos os campos com números válidos.';
+                messageElement.className = 'message error';
+                return;
+            }
+            
+            // Validação principal: B deve ser maior que A
+            if (numberB > numberA) {
+                messageElement.textContent = `Formulário válido! ${numberB} é maior que ${numberA}.`;
+                messageElement.className = 'message success';
+            } else {
+                messageElement.textContent = `Formulário inválido! ${numberB} não é maior que ${numberA}.`;
+                messageElement.className = 'message error';
+            }
+        });
+    </script>
+</body>
+</html>
